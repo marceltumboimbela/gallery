@@ -1,0 +1,23 @@
+.albumContainer {
+}
+
+.album {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.albumItem {
+  width: calc(100% / 2 - (1rem * 1 / 2));
+}
+
+.photo {
+  width: 100%;
+  border-radius: 0.5rem;
+}
+
+.add {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+}

@@ -1,0 +1,40 @@
+.headerContainer{
+}
+
+.header {
+  display: flex;
+  align-items: top;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0 1rem;
+}
+
+.info {
+  flex-grow: 1;
+}
+
+.name {
+  font-size: 1.5rem;
+}
+
+.nameContainer {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.job {
+  color: #969696;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.emailContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.hideHeader {
+  /* display: none; */
+  transform: translateY(-200%);
+  transition: transform 0.5s ease-in-out;
+}
