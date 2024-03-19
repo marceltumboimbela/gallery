@@ -11,6 +11,7 @@
   top: 0;
   background-color: #242424;
   padding-top: 2rem;
+  overflow: hidden;
 }
 
 .carouselContainer::before {
@@ -24,16 +25,29 @@
   z-index: -1;
 }
 
+.carousel2 {
+  display: flex;
+  overflow-x: hidden;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  align-items: center;
+  transform: translateX(calc(-140px * 1/2));
+  width: calc(140px * 2 + 180px + 0.75rem * 2)
+}
+
 .counter {
   text-align: center;
   font-size: 0.75rem;
   color: #969696;
+  position: absolute;
+  bottom: 0;
+  right: 100px
 }
 
 .prevButton {
   position: absolute;
   top: 50%;
-  left: -2rem;
+  left: 0;
   transform: translateY(-50%);
   background-color: rgba(255, 255, 255, 0.5);
   border: none;
@@ -45,7 +59,7 @@
 .nextButton {
   position: absolute;
   top: 50%;
-  right: -2rem;
+  right: 0;
   transform: translateY(-50%);
   background-color: rgba(255, 255, 255, 0.5);
   border: none;

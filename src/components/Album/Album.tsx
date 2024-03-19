@@ -25,7 +25,24 @@ const Album: React.FC<AlbumProps> = ({ albumPhotos }) => {
 
   return(
     <div className={styles.albumContainer}>
-      {photos.map((photoChunk) =>
+      <ul className={styles.album}>
+        {albumPhotos.map((photo: Photo, index: number) => {
+          let klass = ''
+            if(index % 4 === 0) {
+            klass = 'first'
+            } else if(index % 4 === 1) {
+            klass = 'second'
+            } else if(index % 4 === 2) {
+            klass = 'third'
+            } else if(index % 4 === 3) {
+            klass = 'fourth'
+            }
+          return (
+            <img key={photo.id} src={photo.thumbnailUrl} alt={photo.title} className={`${styles.photo} ${styles[klass]}`}/>
+          )
+        })}
+      </ul>
+      {/* {photos.map((photoChunk) =>
         (
           <ul className={styles.album}>
             {photoChunk.map((photo: Photo, index: number) => {
@@ -45,8 +62,7 @@ const Album: React.FC<AlbumProps> = ({ albumPhotos }) => {
             })}
           </ul>
         )
-
-      )}
+      )} */}
     </div>
   )
 }

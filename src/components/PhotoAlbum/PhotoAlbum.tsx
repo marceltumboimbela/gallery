@@ -1,6 +1,5 @@
-import React, { useEffect, useState, useMemo } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import styles from './PhotoAlbum.module.css'
-import { CarouselPhoto } from '@/components/CarouselPhoto';
 import Add from '@/assets/Add.png';
 import { Carousel } from '@/components/Carousel';
 import { Album } from '@/components/Album';
@@ -49,10 +48,6 @@ export default function PhotoAlbum() {
     return photos.filter((photo) => photo.albumId === currentAlbumId)
   }, [photos, currentAlbumId]);
 
-  function handleAlbumChange (newAlbumId: number) {
-    setCurrentAlbumId(newAlbumId);
-  }
-
   function handleNext() {
     setCurrentAlbumId((prevAlbumId) => (prevAlbumId === 10 ? 1 : prevAlbumId + 1));
   }
@@ -63,13 +58,7 @@ export default function PhotoAlbum() {
 
   return (
     <>
-      <Carousel handlePrev={handlePrev} handleNext={handleNext} currentAlbumId={currentAlbumId}>
-        {firstPhotosFromEachAlbum.map((photo) => (
-          <li key={photo.id} className={styles.carouselItem}>
-            <CarouselPhoto currentAlbumId={currentAlbumId} albumId={photo.albumId} imageUrl={photo.thumbnailUrl} description={photo.title} handleAlbumChange={handleAlbumChange} />
-          </li>
-        ))}
-      </Carousel>
+      <Carousel handlePrev={handlePrev} handleNext={handleNext} currentAlbumId={currentAlbumId} photos={firstPhotosFromEachAlbum} />
       <Album albumPhotos={albumPhotos} />
       <img src={Add} className={styles.add}/>
     </>

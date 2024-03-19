@@ -8,6 +8,7 @@
   display: grid;
   gap: 0.5rem;
   margin-bottom: 0.5rem;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .albumItem {
@@ -27,8 +28,8 @@
   right: 1rem;
 }
 
-.first{
-  grid-area: 1/1/3/2;
+/* .first{
+  grid-area: 1/1/span 2/2;
   aspect-ratio: 155/200;
 }
 
@@ -43,6 +44,30 @@
 }
 
 .fourth{
-  grid-area: 2/2/4/3;
+  grid-area: 2/2/span 2/3;
   aspect-ratio: 155/200;
+} */
+
+.first{
+  grid-column: span 1/span 1;
+  grid-row: span 2/span 2;
+  aspect-ratio: 155/200;
+}
+
+.second{
+  grid-column: span 1/span 1;
+  grid-row: span 1/span 1;
+  aspect-ratio: 155/100;
+}
+
+.third{
+  grid-column: span 1/span 1;
+  grid-row: span 2/span 2;
+  aspect-ratio: 155/200;
+}
+
+.fourth{
+  grid-column: span 1/span 1;
+  grid-row: span 1/span 1;
+  aspect-ratio: 155/100;
 }
